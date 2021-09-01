@@ -1,1 +1,1 @@
-# ebpf-perf
+# eBPF Performance Benchmarks for Go
