@@ -1,4 +1,6 @@
 # eBPF Performance Evaluations for Go
+[![Build Status](https://github.com/syscll/ebpf-perf-go/workflows/ci/badge.svg)](https://github.com/syscll/ebpf-perf-go/actions)
+
 This repository contains evaluations for creating and running eBPF programs using 3rd party Go libraries.
 
 Currently supporting the [Cilium](https://github.com/cilium/ebpf) library.
