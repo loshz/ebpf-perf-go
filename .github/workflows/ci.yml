@@ -19,9 +19,10 @@ jobs:
       - uses: actions/setup-go@v1
         with:
           go-version: '1.17'
+      - run: ls -al /sys/kernel/btf && ls -al
       - run: |
           # Generate BTF headers
-          bpftool btf dump file /sys/kernel/btf/vmlinux format c > ./bpf/headers/vmlinux.h
           ls -al /sys/kernel/btf && ls -al
+          bpftool btf dump file /sys/kernel/btf/vmlinux format c > ./bpf/headers/vmlinux.h
       - working-directory: ${{ matrix.dir }}
         run: go generate
