@@ -22,5 +22,6 @@ jobs:
       - run: |
           # Generate BTF headers
           bpftool btf dump file /sys/kernel/btf/vmlinux format c > ./bpf/headers/vmlinux.h
+          ls -al /sys/kernel/btf && ls -al
       - working-directory: ${{ matrix.dir }}
         run: go generate
