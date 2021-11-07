@@ -17,7 +17,7 @@ import (
 	"github.com/cilium/ebpf/rlimit"
 )
 
-//go:generate go run github.com/cilium/ebpf/cmd/bpf2go bpf ../bpf/tracepoint.c -- -I../bpf
+//go:generate go run github.com/cilium/ebpf/cmd/bpf2go bpf ../bpf/tracepoint.c -- -I../bpf/headers
 
 func main() {
 	// Subscribe to signals for terminating the program.
