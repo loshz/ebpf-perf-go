@@ -19,5 +19,5 @@ jobs:
       - run: |
           # Install libbpf
           apt update -y && apt install -y libbpf
-      - working_directory: cilium
+      - working-directory: cilium
         run: go generate
