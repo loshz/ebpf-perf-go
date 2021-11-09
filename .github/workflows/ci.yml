@@ -20,6 +20,6 @@ jobs:
           # Install libbpf
           sudo mkdir -p /usr/include/bpf/
           curl -sSL "https://github.com/libbpf/libbpf/archive/refs/tags/v0.5.0.tar.gz" -o /tmp/libbpf.tar.gz
-          tar -xvf /tmp/libbpf.tar.gz --strip-components=2 -C /usr/include/bpf "libbpf-0.5.0/src/bpf_helper_defs.h" "libbpf-0.5.0/src/bpf_helpers.h"
+          sudo tar -xvf /tmp/libbpf.tar.gz --strip-components=2 -C /usr/include/bpf "libbpf-0.5.0/src/bpf_helper_defs.h" "libbpf-0.5.0/src/bpf_helpers.h"
       - working-directory: cilium
         run: go generate
