@@ -7,6 +7,7 @@ Currently supporting the [Cilium](https://github.com/cilium/ebpf) library.
 
 ## Usage
 In order to compile the eBPF bytecode you will need the required header files:
+- `./bpf/headers/vmlinux.h`: auto-generated using vmlinux BTF 5.14.16
 - [libbpf](https://github.com/libbpf/libbpf) must be installed.
 
 ## eBPF
