@@ -1,13 +1,12 @@
-#include "vmlinux.h"
-
+#include <linux/bpf.h>
 #include <bpf/bpf_helpers.h>
 
 char __license[] SEC("license") = "Dual MIT/GPL";
 
 struct bpf_map_def SEC("maps") syscall_count = {
     .type = BPF_MAP_TYPE_ARRAY,
-    .key_size = sizeof(u32),
-    .value_size = sizeof(u64),
+    .key_size = sizeof(__u32),
+    .value_size = sizeof(__u64),
     .max_entries = 1,
 };
 
@@ -15,8 +14,8 @@ struct bpf_map_def SEC("maps") syscall_count = {
 // /sys/kernel/debug/tracing/events/syscalls/sys_enter_mkdir
 SEC("tracepoint/syscalls/sys_enter_mkdir")
 int sys_enter_mkdir() {
-    u32 key = 0;
-    u64 init_val = 1, *count;
+    __u32 key = 0;
+    __u64 init_val = 1, *count;
 
     count = bpf_map_lookup_elem(&syscall_count, &key);
     if (!count) {
